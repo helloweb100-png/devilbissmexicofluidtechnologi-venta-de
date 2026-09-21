@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venta de pistolas, tanques y conexiones para pintar a pistola. Equipo para pintores, talleres automotrices y contratistas. Pregunta por WhatsApp.</title>
-  <meta name="description" content="Venta de pistolas, tanques y conexiones para pintar a pistola. Equipo para pintores, talleres automotrices y contratistas. Pregunta por WhatsApp.">
-  <meta name="keywords" content="pistolas para pintar, tanques de pintura, conexiones para compresor, equipo para pintar a pistola, pistola de pintura profesional, taller automotriz, pintura con compresor, equipo para pintor, venta de pistolas de pintura">
+  <title>Pistolas Binks y DeVilbiss, tanques de presión y bombas de circulación | Mexico Fluid Technologies</title>
+  <meta name="description" content="Distribuidor de equipo Binks y DeVilbiss: pistolas de gravedad, succión y presión, tanques de presión y bombas de circulación para pintura. Asesoría real y respuesta el mismo día por WhatsApp.">
+  <meta name="keywords" content="pistolas Binks, pistolas DeVilbiss, pistola DV1, tanques de presion para pintura, bomba de circulacion de pintura, equipo para pintar a pistola, pistola de pintura profesional, taller automotriz, pintura con compresor, venta de pistolas de pintura">
   <meta name="author" content="DeVilbiss - Mexico Fluid Technologies">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#050506">
-  <meta property="og:title" content="Venta de pistolas, tanques y conexiones para pintar a pistola. Equipo para pintores, talleres automotrices y contratistas. Pregunta por WhatsApp.">
-  <meta property="og:description" content="Venta de pistolas, tanques y conexiones para pintar a pistola. Equipo para pintores, talleres automotrices y contratistas. Pregunta por WhatsApp.">
+  <meta property="og:title" content="Pistolas Binks y DeVilbiss, tanques de presión y bombas de circulación | Mexico Fluid Technologies">
+  <meta property="og:description" content="Distribuidor de equipo Binks y DeVilbiss: pistolas de gravedad, succión y presión, tanques de presión y bombas de circulación para pintura. Asesoría real y respuesta el mismo día por WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
-  <meta property="og:image" content="logo.svg">
-  <link rel="icon" type="image/png" href="logo.svg">
-  <link rel="apple-touch-icon" href="logo.svg">
+  <meta property="og:image" content="img/favicon.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
   <script>document.documentElement.classList.add("js","is-loading");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Barlow+Condensed:wght@500;600;700&display=swap">
 <style>
@@ -59,10 +59,19 @@
   --red: #3394ff;
   --red-2: #afcff4;
   --red-dark: #006feb;
-  --sage: #47cfd1;
-  --gold: #8c88f2;
+  --sage: #2bc4b8;
+  --gold: #ffb238;
   --whatsapp: #25d366;
   --whatsapp-dark: #128c7e;
+
+  /* ---- Acentos de marca: tomados del logotipo DeVilbiss y Binks.
+         Se usan en detalles puntuales (tags, numeros, iconos) para
+         que la pagina tenga mas color sin perder orden visual. ---- */
+  --accent-orange: #f7941e;
+  --accent-orange-dark: #d9740a;
+  --accent-teal: #00a99d;
+  --accent-magenta: #c23a72;
+  --accent-navy: #0a1568;
 
   --radius: 10px;
   --r-btn: 8px;
@@ -549,6 +558,10 @@ body.is-ready .hero-eyebrow::after {
   font-size: 1.1rem;
 }
 
+.site-header.is-compact .brand-wordmark {
+  height: 18px;
+}
+
 .site-header.is-compact .brand-tagline {
   max-height: 0;
   opacity: 0;
@@ -644,6 +657,16 @@ body.is-ready .hero-eyebrow::after {
   overflow: hidden;
   text-overflow: ellipsis;
   transition: font-size 0.6s var(--ease-out);
+}
+
+.brand-wordmark {
+  display: block;
+  height: 23px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: left center;
+  transition: height 0.6s var(--ease-out);
 }
 
 .brand-tagline {
@@ -915,10 +938,10 @@ body.is-ready .hero-eyebrow::after {
   align-items: center;
   gap: 10px;
   padding: 7px 14px;
-  border: 1px solid rgba(71,207,209, 0.3);
+  border: 1px solid color-mix(in srgb, var(--tag-color, var(--sage)) 30%, transparent);
   border-radius: var(--r-sm);
-  background: rgba(71,207,209, 0.07);
-  color: var(--sage);
+  background: color-mix(in srgb, var(--tag-color, var(--sage)) 9%, transparent);
+  color: var(--tag-color, var(--sage));
   font-size: 0.63rem;
   font-weight: 700;
   letter-spacing: 0.2em;
@@ -1090,6 +1113,39 @@ body.is-ready .hero-title .line-inner {
   font-size: clamp(0.96rem, 1.2vw, 1.05rem);
   line-height: 1.72;
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+}
+
+.hero-brands {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hero-brand-chip {
+  padding: 6px 16px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--photo-line-3);
+  font-family: var(--hw-acento);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--photo-text);
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+}
+
+.hero-brand-chip--navy {
+  border-color: color-mix(in srgb, var(--accent-navy) 55%, var(--photo-line-3));
+  background: color-mix(in srgb, var(--accent-navy) 38%, transparent);
+}
+
+.hero-brand-chip--orange {
+  border-color: color-mix(in srgb, var(--accent-orange) 55%, var(--photo-line-3));
+  background: color-mix(in srgb, var(--accent-orange) 20%, transparent);
 }
 
 .hero-cta {
@@ -1336,6 +1392,12 @@ main section[id] {
 .service-rows {
   counter-reset: srow;
 }
+
+/* Cada fila toma un color de acento distinto (tomado del logo) para
+   que numeros, tag y viñetas combinen entre si sin ser todo azul. */
+.service-row:nth-of-type(1) { --tag-color: var(--red); }
+.service-row:nth-of-type(2) { --red: var(--accent-orange); --tag-color: var(--accent-orange); }
+.service-row:nth-of-type(3) { --red: var(--accent-teal); --tag-color: var(--accent-teal); }
 
 .service-row {
   position: relative;
@@ -1599,6 +1661,11 @@ main section[id] {
   padding-block: 6px;
 }
 
+/* Cada paso enciende con un color de marca distinto al activarse */
+.timeline-step[data-step="2"] { --red: var(--accent-orange); --red-dark: var(--accent-orange-dark); }
+.timeline-step[data-step="3"] { --red: var(--accent-teal); --red-dark: #007b72; }
+.timeline-step[data-step="4"] { --red: var(--gold); --red-dark: var(--accent-orange-dark); }
+
 .timeline-track,
 .timeline-progress {
   position: absolute;
@@ -1771,6 +1838,24 @@ main section[id] {
   height: 100%;
   object-fit: cover;
   filter: contrast(1.02) brightness(1.03);
+}
+
+.gallery-tag {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 2;
+  padding: 6px 11px;
+  border-radius: var(--r-pill);
+  background: color-mix(in srgb, var(--gtag-color, var(--red)) 82%, black 10%);
+  color: #fff;
+  font-family: var(--hw-acento);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
 }
 
 .gallery-item::after {
@@ -2690,6 +2775,10 @@ main section[id] {
     font-size: 1.18rem;
   }
 
+  .brand-wordmark {
+    height: 19px;
+  }
+
   .brand-tagline {
     font-size: 0.52rem;
     letter-spacing: 0.2em;
@@ -3138,7 +3227,7 @@ main section[id] {
 }
 
 /* --- sobre fotografia: texto y acento claros --- */
-.hero,.site-header,.loader,.lightbox,.has-bg,.parallax-banner{color:var(--photo-text);--red:#3394ff;--red-2:#afcff4;--red-dark:#006feb;--sage:#47cfd1;--gold:#8c88f2;}
+.hero,.site-header,.loader,.lightbox,.has-bg,.parallax-banner{color:var(--photo-text);--red:#3394ff;--red-2:#afcff4;--red-dark:#006feb;--sage:#2bc4b8;--gold:#ffb238;}
 
 /* --- tercera tipografia: etiquetas y rotulos --- */
 :where(.eyebrow,.tag,.contact-label,.hero-social-label,.hero-typewriter-label,.brand-tagline,.nav-link,.footer-col h4,.footer-bottom-tag,.loader-tagline){font-family:var(--hw-acento)}
@@ -3157,7 +3246,7 @@ main section[id] {
     <div class="loader-texture" aria-hidden="true"></div>
     <div class="loader-inner">
       <div class="loader-mark">
-        <img src="logo.svg" alt="" class="loader-logo">
+        <img src="img/logo-mascota.png" alt="" class="loader-logo">
       </div>
       <div class="loader-rings" aria-hidden="true">
         <span></span><span></span><span></span>
@@ -3172,11 +3261,11 @@ main section[id] {
   
 <header class="site-header" id="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="brand" aria-label="DeVilbiss - Mexico Fluid Technologies">
-        <span class="brand-mark"><img src="logo.svg" alt="DeVilbiss - Mexico Fluid Technologies" class="brand-logo"></span>
+      <a href="#inicio" class="brand" aria-label="DeVilbiss Mexico Fluid Technologies - Pistolas, tanques y conexiones para pintar">
+        <span class="brand-mark"><img src="img/logo-mascota.png" alt="" class="brand-logo"></span>
         <span class="brand-text">
-          <span class="brand-name">DeVilbiss - Mexico Fluid Technologies</span>
-          <span class="brand-tagline">Pistolas, tanques y conexiones para pintar</span>
+          <img src="img/logo-devilbiss.png" alt="DeVilbiss" class="brand-wordmark">
+          <span class="brand-tagline">Mexico Fluid Technologies</span>
         </span>
       </a>
       <nav class="main-nav" id="main-nav">
@@ -3214,6 +3303,10 @@ main section[id] {
           <span class="typewriter-word" id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true"></span>
         </p>
         <p class="hero-desc" data-hero="5">Vendemos pistolas, tanques y conexiones para pintar a pistola. Si trabajas en taller, obra o por tu cuenta, aqui encuentras el equipo que necesitas para hacer bien el trabajo.</p>
+        <div class="hero-brands" data-hero="5" aria-label="Trabajamos con equipo Binks y DeVilbiss">
+          <span class="hero-brand-chip hero-brand-chip--navy">Binks</span>
+          <span class="hero-brand-chip hero-brand-chip--orange">DeVilbiss</span>
+        </div>
         <div class="hero-cta" data-hero="6">
           <button type="button" class="btn btn-primary btn-lg" data-wa-trigger>
             <svg viewBox="0 0 24 24" class="btn-icon" aria-hidden="true"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.8a8.1 8.1 0 0 1 5.75 2.38 8.07 8.07 0 0 1 2.38 5.73c0 4.48-3.65 8.12-8.14 8.12a8.1 8.1 0 0 1-4.13-1.13l-.3-.17-3.12.82.83-3.04-.19-.31a8.06 8.06 0 0 1-1.24-4.31c0-4.48 3.65-8.09 8.16-8.09m-4.48 4.19c-.15 0-.4.06-.6.28-.21.23-.8.77-.8 1.89s.82 2.2.93 2.35c.11.15 1.6 2.5 3.95 3.44 1.94.79 2.35.63 2.77.6.42-.04 1.36-.55 1.55-1.09.19-.53.19-.99.13-1.09-.06-.09-.21-.15-.44-.26-.23-.12-1.36-.67-1.57-.75-.21-.08-.36-.12-.52.11-.15.23-.6.75-.73.9-.13.15-.27.17-.5.06-.23-.12-.96-.35-1.83-1.13-.68-.6-1.13-1.35-1.27-1.58-.13-.23-.01-.35.1-.47.11-.11.23-.27.35-.4.11-.14.15-.24.23-.4.08-.15.04-.3-.02-.42-.06-.11-.52-1.28-.72-1.74-.19-.46-.38-.4-.52-.4Z"/></svg>
@@ -3262,15 +3355,15 @@ main section[id] {
         <div class="service-rows">
           <article class="service-row">
             <div class="service-media" data-reveal="media">
-              <img src="img/2.png" alt="Pistolas de aspersión para todo tipo de trabajo" loading="lazy">
+              <img src="img/2.png" alt="Pistola de pintura Binks de succión para trabajo profesional" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
                 <span class="service-index" aria-hidden="true">01</span>
-                <span class="tag">Pistolas para pintar</span>
+                <span class="tag">Pistolas Binks y DeVilbiss</span>
               </div>
-              <h3 class="service-title" data-reveal>Pistolas de aspersión para todo tipo de trabajo</h3>
-              <p class="service-desc" data-reveal>Pistolas de pintura para uso profesional y de taller. Ideales para acabados uniformes en superficies metálicas, madera o automotriz. Contamos con distintos modelos según el tipo de aplicación.</p>
+              <h3 class="service-title" data-reveal>Pistolas Binks y DeVilbiss para cada tipo de trabajo</h3>
+              <p class="service-desc" data-reveal>Pistolas de pintura Binks y DeVilbiss para uso profesional y de taller. Ideales para acabados uniformes en superficies metálicas, madera o automotriz. Contamos con modelos de gravedad, succión y presión según el tipo de aplicación.</p>
               <ul class="service-list">
                 <li data-reveal>Pistolas de gravedad y succión disponibles</li>
                 <li data-reveal>Compatibles con pintura base agua y solvente</li>
@@ -3283,48 +3376,50 @@ main section[id] {
 
           <article class="service-row service-row--reverse">
             <div class="service-media" data-reveal="media">
-              <img src="img/3.png" alt="Tanques de presión para pintura continua" loading="lazy">
+              <img src="img/4.jpg" alt="Tanque de presión Binks con doble regulador y manómetros" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
                 <span class="service-index" aria-hidden="true">02</span>
-                <span class="tag">Tanques y depósitos</span>
+                <span class="tag">Tanques de presión</span>
               </div>
-              <h3 class="service-title" data-reveal>Tanques de presión para pintura continua</h3>
-              <p class="service-desc" data-reveal>Tanques presurizados para alimentar pistolas en trabajos de mayor volumen. Permiten pintar sin interrupciones y con presión constante. Aptos para talleres, producción y aplicaciones industriales.</p>
+              <h3 class="service-title" data-reveal>Tanques de presión Binks para pintar sin interrupciones</h3>
+              <p class="service-desc" data-reveal>Tanques presurizados Binks para alimentar pistolas en trabajos de mayor volumen. Con doble regulador de aire y fluido y manómetros de precisión, permiten pintar con presión constante en talleres, producción y aplicaciones industriales.</p>
               <ul class="service-list">
                 <li data-reveal>Tanques de diferentes capacidades en existencia</li>
-                <li data-reveal>Reguladores de presión integrados</li>
+                <li data-reveal>Doble regulador de aire y fluido con manómetro</li>
                 <li data-reveal>Fabricados para trabajo continuo</li>
                 <li data-reveal>Compatibles con las pistolas que manejamos</li>
-                <li data-reveal>Conexiones estándar para fácil instalación</li>
+                <li data-reveal>Incluimos mangueras y conexiones para instalarlo</li>
               </ul>
             </div>
           </article>
 
           <article class="service-row">
             <div class="service-media" data-reveal="media">
-              <img src="img/4.jpg" alt="Conexiones, mangueras y refacciones" loading="lazy">
+              <img src="img/3.png" alt="Bomba de circulación de pintura Binks con filtros dobles" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
                 <span class="service-index" aria-hidden="true">03</span>
-                <span class="tag">Conexiones y accesorios</span>
+                <span class="tag">Bombas de circulación</span>
               </div>
-              <h3 class="service-title" data-reveal>Conexiones, mangueras y refacciones</h3>
-              <p class="service-desc" data-reveal>Todo lo necesario para armar, completar o reponer partes de tu equipo de pintura. Mangueras, acoples, niples y accesorios de conexión para que tu sistema trabaje sin fugas ni pérdidas de presión.</p>
+              <h3 class="service-title" data-reveal>Bombas de circulación Binks para tu línea de pintura</h3>
+              <p class="service-desc" data-reveal>Bombas neumáticas Binks con filtros dobles integrados para recircular pintura desde un tanque central hacia una o varias pistolas. Mantienen presión y caudal constantes en sistemas de producción continua.</p>
               <ul class="service-list">
-                <li data-reveal>Acoples rápidos y niples de distintas medidas</li>
-                <li data-reveal>Mangueras flexibles para aire y pintura</li>
-                <li data-reveal>Refacciones para pistolas y tanques</li>
-                <li data-reveal>Piezas compatibles con equipos estándar</li>
+                <li data-reveal>Filtros dobles integrados de fácil limpieza</li>
+                <li data-reveal>Alimenta una o varias estaciones de pintura</li>
+                <li data-reveal>Funcionamiento neumático, sin motor eléctrico</li>
+                <li data-reveal>Ideal para líneas de producción y cabinas</li>
+                <li data-reveal>Refacciones y mangueras de repuesto disponibles</li>
               </ul>
             </div>
           </article>
+
         </div>
 
         <div class="services-cta" data-reveal>
-          <p>Si necesitas equipo para pintar o tienes dudas sobre qué modelo se adapta a tu trabajo, aquí te ayudamos a elegir el correcto.</p>
+          <p>También surtimos mangueras, acoples, filtros y refacciones para tu equipo. Si necesitas algo puntual o tienes dudas sobre qué modelo se adapta a tu trabajo, aquí te ayudamos a elegir el correcto.</p>
           <button type="button" class="btn btn-primary" data-wa-trigger><span>Consulta tu equipo</span></button>
         </div>
       </div>
@@ -3415,8 +3510,8 @@ main section[id] {
           <p class="section-desc" data-reveal>Sales con el equipo adecuado para tu tipo de trabajo, sin gastar de mas ni quedarte corto. Dejas de perder tiempo buscando refacciones o adaptando piezas que no encajan.</p>
         </div>
         <div class="brochures-grid" data-reveal-group>
-          <figure class="brochure-item" data-reveal="media"><img src="img/6.jpg" alt="Asi queda tu trabajo cuando tienes el equipo correcto" loading="lazy"></figure>
-          <figure class="brochure-item" data-reveal="media"><img src="img/7.png" alt="Lo que te llevas" loading="lazy"></figure>
+          <figure class="brochure-item" data-reveal="media"><img src="img/6.jpg" alt="Sistema de filtración de aire DeVilbiss CleanAir con doble filtro y regulador" loading="lazy"></figure>
+          <figure class="brochure-item" data-reveal="media"><img src="img/7.png" alt="Trabajamos con equipo original Binks y DeVilbiss" loading="lazy"></figure>
         </div>
       </div>
     </section>
@@ -3435,42 +3530,48 @@ main section[id] {
             <p class="eyebrow" data-reveal>Lo que manejamos</p>
             <h2 class="section-title" data-reveal>Equipo para <span class="text-gold">trabajar en serio</span></h2>
           </div>
-          <p class="section-desc" data-reveal>Pistolas de gravedad y succion, tanques de presion, mangueras y conexiones. Todo lo que necesitas para pintar con potencia, control y acabados limpios desde el primer dia.</p>
+          <p class="section-desc" data-reveal>Pistolas de gravedad, succión y alimentación a presión, más sistemas de control y dosificación para línea de producción. Todo lo que necesitas para pintar con potencia, control y acabados limpios desde el primer día.</p>
         </div>
         <div class="gallery-grid" data-reveal-group>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/11.jpg" alt="Pistola de gravedad con vaso superior sobre superficie blanca" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="0" aria-label="Ampliar imagen: Pistola de gravedad con vaso superior sobre superficie blanca">
+            <span class="gallery-tag" style="--gtag-color:var(--red)">Gravedad</span>
+            <img src="img/11.jpg" alt="Pistola de gravedad DeVilbiss DV1 con vaso superior" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="0" aria-label="Ampliar imagen: Pistola de gravedad DeVilbiss DV1 con vaso superior">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/12.png" alt="Pistola de succion con manguera conectada al tanque" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="1" aria-label="Ampliar imagen: Pistola de succion con manguera conectada al tanque">
+            <span class="gallery-tag" style="--gtag-color:var(--red)">Gravedad</span>
+            <img src="img/12.png" alt="Pistola de gravedad DeVilbiss DV1, acabado negro y dorado" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="1" aria-label="Ampliar imagen: Pistola de gravedad DeVilbiss DV1, acabado negro y dorado">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/13.png" alt="Tanque de presion metalico con manometro visible" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="2" aria-label="Ampliar imagen: Tanque de presion metalico con manometro visible">
+            <span class="gallery-tag" style="--gtag-color:var(--red)">Gravedad</span>
+            <img src="img/13.png" alt="Pistola de gravedad DeVilbiss DV1, acabado negro y azul" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="2" aria-label="Ampliar imagen: Pistola de gravedad DeVilbiss DV1, acabado negro y azul">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/14.png" alt="Tanque de pintura con tapa y valvula de seguridad" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="3" aria-label="Ampliar imagen: Tanque de pintura con tapa y valvula de seguridad">
+            <span class="gallery-tag" style="--gtag-color:var(--gold)">Control</span>
+            <img src="img/14.png" alt="Sistema de control y dosificación Binks IntelliFlow RCS3" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="3" aria-label="Ampliar imagen: Sistema de control y dosificación Binks IntelliFlow RCS3">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/15.png" alt="Conexiones y acoples metalicos ordenados sobre mesa" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="4" aria-label="Ampliar imagen: Conexiones y acoples metalicos ordenados sobre mesa">
+            <span class="gallery-tag" style="--gtag-color:var(--accent-orange)">Succión</span>
+            <img src="img/15.png" alt="Pistola de succión profesional DeVilbiss" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="4" aria-label="Ampliar imagen: Pistola de succión profesional DeVilbiss">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
-            <img src="img/16.png" alt="Manguera de aire enrollada junto a regulador de presion" loading="lazy">
-            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="5" aria-label="Ampliar imagen: Manguera de aire enrollada junto a regulador de presion">
+            <span class="gallery-tag" style="--gtag-color:var(--accent-teal)">Presión</span>
+            <img src="img/16.png" alt="Pistola de alimentación a presión DeVilbiss con manguera conductiva" loading="lazy">
+            <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="5" aria-label="Ampliar imagen: Pistola de alimentación a presión DeVilbiss con manguera conductiva">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
@@ -3535,9 +3636,9 @@ main section[id] {
 <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <a href="#inicio" class="brand">
-          <span class="brand-mark"><img src="logo.svg" alt="DeVilbiss - Mexico Fluid Technologies" class="brand-logo"></span>
-          <span class="brand-text"><span class="brand-name">DeVilbiss - Mexico Fluid Technologies</span><span class="brand-tagline">Pistolas, tanques y conexiones para pintar</span></span>
+        <a href="#inicio" class="brand" aria-label="DeVilbiss Mexico Fluid Technologies - Pistolas, tanques y conexiones para pintar">
+          <span class="brand-mark"><img src="img/logo-mascota.png" alt="" class="brand-logo"></span>
+          <span class="brand-text"><img src="img/logo-devilbiss.png" alt="DeVilbiss" class="brand-wordmark"><span class="brand-tagline">Mexico Fluid Technologies</span></span>
         </a>
         <p>Venta de pistolas, tanques y conexiones para pintar. Equipo para profesionales que necesitan potencia y precision en cada trabajo.</p>
       </div>
@@ -4168,7 +4269,8 @@ if (canvas && ctx && hero) {
   const tonos = {
     red: leerTono("--red", "227, 38, 61"),
     paper: leerTono("--photo-text", "244, 239, 232"),
-    sage: leerTono("--sage", "127, 161, 131")
+    sage: leerTono("--sage", "127, 161, 131"),
+    orange: leerTono("--accent-orange", "247, 148, 30")
   };
 
   const makeSprite = (rgb) => {
@@ -4190,13 +4292,15 @@ if (canvas && ctx && hero) {
   const sprites = {
     red: makeSprite(tonos.red),
     paper: makeSprite(tonos.paper),
-    sage: makeSprite(tonos.sage)
+    sage: makeSprite(tonos.sage),
+    orange: makeSprite(tonos.orange)
   };
 
   const pickSprite = () => {
     const seed = Math.random();
-    if (seed > 0.74) return { sprite: sprites.paper, core: tonos.paper };
-    if (seed > 0.66) return { sprite: sprites.sage, core: tonos.sage };
+    if (seed > 0.8) return { sprite: sprites.paper, core: tonos.paper };
+    if (seed > 0.6) return { sprite: sprites.sage, core: tonos.sage };
+    if (seed > 0.4) return { sprite: sprites.orange, core: tonos.orange };
     return { sprite: sprites.red, core: tonos.red };
   };
 
