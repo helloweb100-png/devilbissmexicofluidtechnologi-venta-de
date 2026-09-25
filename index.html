@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pistolas Binks y DeVilbiss, tanques de presión y bombas de circulación | Mexico Fluid Technologies</title>
-  <meta name="description" content="Distribuidor de equipo Binks y DeVilbiss: pistolas de gravedad, succión y presión, tanques de presión y bombas de circulación para pintura. Asesoría real y respuesta el mismo día por WhatsApp.">
-  <meta name="keywords" content="pistolas Binks, pistolas DeVilbiss, pistola DV1, tanques de presion para pintura, bomba de circulacion de pintura, equipo para pintar a pistola, pistola de pintura profesional, taller automotriz, pintura con compresor, venta de pistolas de pintura">
+  <title>Pistolas Binks y DeVilbiss, tanques y bombas para acabado industrial, automotriz y construcción | Mexico Fluid Technologies</title>
+  <meta name="description" content="Equipo Binks y DeVilbiss para aplicación de pintura y acabado industrial, automotriz y de construcción: pistolas DV1, JGA y toda la línea a presión, succión y gravedad, tanques y bombas de circulación y transferencia. Tecnología HVLP, Trans-Tech y convencional. Respuesta el mismo día por WhatsApp.">
+  <meta name="keywords" content="pistolas Binks, pistolas DeVilbiss, pistola DV1, pistola JGA, tecnologia HVLP, Trans-Tech, tanques de presion para pintura, bomba de circulacion de pintura, bomba de transferencia de pintura, equipo para pintar a pistola, pistola de pintura profesional, acabado industrial, pintura automotriz, pintura de construccion, pintura de trafico, taller automotriz, pintura con compresor, venta de pistolas de pintura">
   <meta name="author" content="DeVilbiss - Mexico Fluid Technologies">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#050506">
-  <meta property="og:title" content="Pistolas Binks y DeVilbiss, tanques de presión y bombas de circulación | Mexico Fluid Technologies">
-  <meta property="og:description" content="Distribuidor de equipo Binks y DeVilbiss: pistolas de gravedad, succión y presión, tanques de presión y bombas de circulación para pintura. Asesoría real y respuesta el mismo día por WhatsApp.">
+  <meta property="og:title" content="Pistolas Binks y DeVilbiss, tanques y bombas para acabado industrial, automotriz y construcción | Mexico Fluid Technologies">
+  <meta property="og:description" content="Equipo Binks y DeVilbiss para aplicación de pintura y acabado industrial, automotriz y de construcción: pistolas DV1, JGA y toda la línea a presión, succión y gravedad, tanques y bombas de circulación y transferencia. Tecnología HVLP, Trans-Tech y convencional. Respuesta el mismo día por WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_MX">
   <meta property="og:image" content="img/favicon.png">
@@ -1567,6 +1567,144 @@ main section[id] {
   transform: rotate(135deg) scale(1.15);
 }
 
+/* ---------- Lineup de equipos: 9 modelos, con foto donde hay certeza ---------- */
+.equip-lineup-intro {
+  margin: 0 0 20px;
+  color: var(--paper-muted);
+  font-size: 0.95rem;
+}
+
+/* Banner horizontal: una sola fila que se desliza, no un grid que crece en alto */
+.equip-lineup {
+  display: flex;
+  gap: 14px;
+  margin: 0 0 clamp(56px, 7vw, 96px);
+  padding: 6px 0 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.equip-lineup::-webkit-scrollbar {
+  height: 5px;
+}
+
+.equip-lineup::-webkit-scrollbar-thumb {
+  background: var(--line-3);
+  border-radius: var(--r-pill);
+}
+
+.equip-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 clamp(128px, 15vw, 168px);
+  width: clamp(128px, 15vw, 168px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: var(--panel);
+  scroll-snap-align: start;
+  transition: border-color 0.35s ease, transform 0.35s var(--ease-out);
+}
+
+.equip-card:hover {
+  border-color: color-mix(in srgb, var(--card-color, var(--red)) 55%, var(--line-2));
+  transform: translateY(-3px);
+}
+
+.equip-card-media {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  background: var(--ink-2);
+}
+
+.equip-card-media > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 12px;
+  filter: contrast(1.02) brightness(1.04);
+}
+
+.equip-card-body {
+  flex-shrink: 0;
+  padding: 10px 12px 12px;
+  border-top: 1px solid var(--line);
+}
+
+.equip-card--code .equip-card-body {
+  flex: 1;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 6px;
+  border-top: 0;
+  text-align: center;
+}
+
+.equip-card--code .equip-card-body::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--card-color, var(--red));
+  box-shadow: 0 0 12px color-mix(in srgb, var(--card-color, var(--red)) 60%, transparent);
+  transform: rotate(45deg);
+}
+
+.equip-card-code {
+  display: block;
+  font-family: var(--hw-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.equip-card-cat {
+  display: block;
+  color: var(--muted);
+  font-size: 0.63rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+/* ---------- Recap de tecnologias y aplicaciones ---------- */
+.spec-strip {
+  display: grid;
+  gap: clamp(20px, 3vw, 30px);
+  margin-top: clamp(44px, 5vw, 68px);
+}
+
+.spec-strip-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.spec-strip-label {
+  flex-shrink: 0;
+  min-width: 9ch;
+  color: var(--muted);
+  font-family: var(--hw-acento);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.spec-strip-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .services-cta {
   display: flex;
   align-items: center;
@@ -2879,6 +3017,10 @@ main section[id] {
     aspect-ratio: 1 / 1;
   }
 
+  .spec-strip-label {
+    min-width: 100%;
+  }
+
   .contact-list li {
     grid-template-columns: 38px 1fr;
     gap: 14px;
@@ -3293,7 +3435,7 @@ main section[id] {
       <canvas id="particles-canvas" aria-hidden="true"></canvas>
       <div class="hero-rules" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="container hero-inner">
-        <p class="eyebrow hero-eyebrow" data-hero="1">Equipo profesional para pintar a pistola</p>
+        <p class="eyebrow hero-eyebrow" data-hero="1">Acabado industrial, automotriz y de construcción</p>
         <h1 class="hero-title">
           <span class="line" data-hero="2"><span class="line-inner gradient-text">Pinta con potencia</span></span>
           <span class="line" data-hero="3"><span class="line-inner">y precision real</span></span>
@@ -3302,7 +3444,7 @@ main section[id] {
           <span class="hero-typewriter-label">Tenemos equipo para:</span>
           <span class="typewriter-word" id="typewriter"></span><span class="typewriter-cursor" aria-hidden="true"></span>
         </p>
-        <p class="hero-desc" data-hero="5">Vendemos pistolas, tanques y conexiones para pintar a pistola. Si trabajas en taller, obra o por tu cuenta, aqui encuentras el equipo que necesitas para hacer bien el trabajo.</p>
+        <p class="hero-desc" data-hero="5">Contamos con los mejores equipos para aplicación de pintura y acabado industrial, automotriz y de construcción: pistolas, tanques y bombas a presión, succión y gravedad. Si trabajas en taller, línea de producción u obra, aqui encuentras el equipo que necesitas para hacer bien el trabajo.</p>
         <div class="hero-brands" data-hero="5" aria-label="Trabajamos con equipo Binks y DeVilbiss">
           <span class="hero-brand-chip hero-brand-chip--navy">Binks</span>
           <span class="hero-brand-chip hero-brand-chip--orange">DeVilbiss</span>
@@ -3352,6 +3494,68 @@ main section[id] {
           </div>
         </div>
 
+        <p class="equip-lineup-intro" data-reveal>Equipos a presión, succión y gravedad, siempre disponibles:</p>
+        <div class="equip-lineup" data-reveal-group>
+          <article class="equip-card equip-card--code" style="--card-color:var(--accent-navy)" data-reveal>
+            <div class="equip-card-body">
+              <span class="equip-card-code">DVR</span>
+              <span class="equip-card-cat">Pistola</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--photo" style="--card-color:var(--red)" data-reveal>
+            <div class="equip-card-media"><img src="img/11.jpg" alt="Pistola DeVilbiss DV1" loading="lazy" width="541" height="537"></div>
+            <div class="equip-card-body">
+              <span class="equip-card-code">DV1</span>
+              <span class="equip-card-cat">Pistola de gravedad</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--code" style="--card-color:var(--accent-orange)" data-reveal>
+            <div class="equip-card-body">
+              <span class="equip-card-code">ProLite</span>
+              <span class="equip-card-cat">Pistola</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--photo" style="--card-color:var(--accent-teal)" data-reveal>
+            <div class="equip-card-media"><img src="img/15.png" alt="Pistola industrial DeVilbiss JGA" loading="lazy" width="213" height="276"></div>
+            <div class="equip-card-body">
+              <span class="equip-card-code">JGA</span>
+              <span class="equip-card-cat">Pistola industrial</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--code" style="--card-color:var(--accent-magenta)" data-reveal>
+            <div class="equip-card-body">
+              <span class="equip-card-code">2100</span>
+              <span class="equip-card-cat">Pistola</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--code" style="--card-color:var(--gold)" data-reveal>
+            <div class="equip-card-body">
+              <span class="equip-card-code">21A</span>
+              <span class="equip-card-cat">Pistola</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--photo" style="--card-color:var(--sage)" data-reveal>
+            <div class="equip-card-media"><img src="img/4.jpg" alt="Tanque de presión Binks" loading="lazy" width="343" height="493"></div>
+            <div class="equip-card-body">
+              <span class="equip-card-code">Tanques</span>
+              <span class="equip-card-cat">Tanque de presión</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--photo" style="--card-color:var(--accent-navy)" data-reveal>
+            <div class="equip-card-media"><img src="img/3.png" alt="Bomba de circulación Binks" loading="lazy" width="521" height="304"></div>
+            <div class="equip-card-body">
+              <span class="equip-card-code">Bombas</span>
+              <span class="equip-card-cat">Bomba</span>
+            </div>
+          </article>
+          <article class="equip-card equip-card--code" style="--card-color:var(--red)" data-reveal>
+            <div class="equip-card-body">
+              <span class="equip-card-code">DAD-500</span>
+              <span class="equip-card-cat">Equipo de línea</span>
+            </div>
+          </article>
+        </div>
+
         <div class="service-rows">
           <article class="service-row">
             <div class="service-media" data-reveal="media">
@@ -3363,13 +3567,13 @@ main section[id] {
                 <span class="tag">Pistolas Binks y DeVilbiss</span>
               </div>
               <h3 class="service-title" data-reveal>Pistolas Binks y DeVilbiss para cada tipo de trabajo</h3>
-              <p class="service-desc" data-reveal>Pistolas de pintura Binks y DeVilbiss para uso profesional y de taller. Ideales para acabados uniformes en superficies metálicas, madera o automotriz. Contamos con modelos de gravedad, succión y presión según el tipo de aplicación.</p>
+              <p class="service-desc" data-reveal>Pistolas de pintura Binks y DeVilbiss —como DV1 y JGA, entre otras líneas que manejamos— para uso profesional, industrial y de taller. Ideales para acabado en superficies metálicas, madera, automotriz y construcción. Contamos con modelos de gravedad, succión y presión según el tipo de aplicación.</p>
               <ul class="service-list">
-                <li data-reveal>Pistolas de gravedad y succión disponibles</li>
-                <li data-reveal>Compatibles con pintura base agua y solvente</li>
-                <li data-reveal>Modelos para uso ligero y uso intensivo</li>
-                <li data-reveal>Boquillas de diferentes calibres incluidas</li>
-                <li data-reveal>Asesoría para elegir el modelo correcto</li>
+                <li data-reveal>Equipos a presión, succión y gravedad</li>
+                <li data-reveal>Tecnología Trans-Tech, HVLP, convencional y asistidos por aire</li>
+                <li data-reveal>Para base agua, solventes, epóxicos y pintura de tráfico</li>
+                <li data-reveal>Gran variedad de boquillas para cada aplicación</li>
+                <li data-reveal>Consumibles y refacciones siempre disponibles</li>
               </ul>
             </div>
           </article>
@@ -3384,12 +3588,12 @@ main section[id] {
                 <span class="tag">Tanques de presión</span>
               </div>
               <h3 class="service-title" data-reveal>Tanques de presión Binks para pintar sin interrupciones</h3>
-              <p class="service-desc" data-reveal>Tanques presurizados Binks para alimentar pistolas en trabajos de mayor volumen. Con doble regulador de aire y fluido y manómetros de precisión, permiten pintar con presión constante en talleres, producción y aplicaciones industriales.</p>
+              <p class="service-desc" data-reveal>Tanques presurizados Binks para alimentar pistolas en trabajos de mayor volumen sin interrupciones. Con regulación doble o sencilla, agitación manual o automática y manómetros de precisión, permiten pintar con presión constante en talleres, producción y aplicaciones industriales.</p>
               <ul class="service-list">
                 <li data-reveal>Tanques de diferentes capacidades en existencia</li>
-                <li data-reveal>Doble regulador de aire y fluido con manómetro</li>
-                <li data-reveal>Fabricados para trabajo continuo</li>
-                <li data-reveal>Compatibles con las pistolas que manejamos</li>
+                <li data-reveal>Regulación doble o sencilla de aire y fluido</li>
+                <li data-reveal>Agitación manual o automática según el modelo</li>
+                <li data-reveal>Fabricados para trabajo continuo, sin interrupciones</li>
                 <li data-reveal>Incluimos mangueras y conexiones para instalarlo</li>
               </ul>
             </div>
@@ -3402,20 +3606,41 @@ main section[id] {
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
                 <span class="service-index" aria-hidden="true">03</span>
-                <span class="tag">Bombas de circulación</span>
+                <span class="tag">Bombas de circulación y transferencia</span>
               </div>
-              <h3 class="service-title" data-reveal>Bombas de circulación Binks para tu línea de pintura</h3>
-              <p class="service-desc" data-reveal>Bombas neumáticas Binks con filtros dobles integrados para recircular pintura desde un tanque central hacia una o varias pistolas. Mantienen presión y caudal constantes en sistemas de producción continua.</p>
+              <h3 class="service-title" data-reveal>Bombas de circulación y transferencia para tu línea de pintura</h3>
+              <p class="service-desc" data-reveal>Bombas neumáticas Binks con filtros dobles integrados para recircular pintura desde un tanque central hacia una o varias pistolas, más bombas de transferencia para trasladar pintura de tambo o cubeta al tanque. Mantienen presión y caudal constantes en sistemas de producción continua.</p>
               <ul class="service-list">
+                <li data-reveal>Bombas de circulación para línea de producción</li>
+                <li data-reveal>Bombas de transferencia de tambo o cubeta a tanque</li>
                 <li data-reveal>Filtros dobles integrados de fácil limpieza</li>
-                <li data-reveal>Alimenta una o varias estaciones de pintura</li>
                 <li data-reveal>Funcionamiento neumático, sin motor eléctrico</li>
-                <li data-reveal>Ideal para líneas de producción y cabinas</li>
                 <li data-reveal>Refacciones y mangueras de repuesto disponibles</li>
               </ul>
             </div>
           </article>
 
+        </div>
+
+        <div class="spec-strip" data-reveal-group>
+          <div class="spec-strip-group" data-reveal>
+            <span class="spec-strip-label">Tecnologías</span>
+            <div class="spec-strip-tags">
+              <span class="tag" style="--tag-color:var(--accent-orange)">Trans-Tech</span>
+              <span class="tag" style="--tag-color:var(--accent-teal)">HVLP</span>
+              <span class="tag" style="--tag-color:var(--sage)">Convencional</span>
+              <span class="tag" style="--tag-color:var(--accent-navy)">Asistidos por aire</span>
+            </div>
+          </div>
+          <div class="spec-strip-group" data-reveal>
+            <span class="spec-strip-label">Aplicaciones</span>
+            <div class="spec-strip-tags">
+              <span class="tag" style="--tag-color:var(--red)">Base agua</span>
+              <span class="tag" style="--tag-color:var(--accent-magenta)">Solventes</span>
+              <span class="tag" style="--tag-color:var(--gold)">Epóxicos</span>
+              <span class="tag" style="--tag-color:var(--accent-orange)">Tráfico</span>
+            </div>
+          </div>
         </div>
 
         <div class="services-cta" data-reveal>
@@ -3504,10 +3729,10 @@ main section[id] {
       <div class="container">
         <div class="section-head">
           <div class="section-head-main">
-            <p class="eyebrow" data-reveal>Lo que te llevas</p>
+            <p class="eyebrow" data-reveal>Nuestras marcas</p>
             <h2 class="section-title" data-reveal>Asi queda tu trabajo cuando tienes el equipo correcto</h2>
           </div>
-          <p class="section-desc" data-reveal>Sales con el equipo adecuado para tu tipo de trabajo, sin gastar de mas ni quedarte corto. Dejas de perder tiempo buscando refacciones o adaptando piezas que no encajan.</p>
+          <p class="section-desc" data-reveal>Encuentra en nuestras marcas manguera, conexiones, equipo de filtración de aire para tu línea, refacciones y soporte para tus equipos. Sales con el equipo adecuado para tu tipo de trabajo, sin gastar de mas ni quedarte corto.</p>
         </div>
         <div class="brochures-grid" data-reveal-group>
           <figure class="brochure-item" data-reveal="media"><img src="img/6.jpg" alt="Sistema de filtración de aire DeVilbiss CleanAir con doble filtro y regulador" loading="lazy"></figure>
@@ -3530,7 +3755,7 @@ main section[id] {
             <p class="eyebrow" data-reveal>Lo que manejamos</p>
             <h2 class="section-title" data-reveal>Equipo para <span class="text-gold">trabajar en serio</span></h2>
           </div>
-          <p class="section-desc" data-reveal>Pistolas de gravedad, succión y alimentación a presión, más sistemas de control y dosificación para línea de producción. Todo lo que necesitas para pintar con potencia, control y acabados limpios desde el primer día.</p>
+          <p class="section-desc" data-reveal>Pistolas de gravedad, succión y alimentación a presión, más sistemas de control y dosificación para línea de producción. Todo lo que necesitas para acabado industrial, automotriz y de construcción, con potencia, control y resultados limpios desde el primer día.</p>
         </div>
         <div class="gallery-grid" data-reveal-group>
           <figure class="gallery-item" data-reveal="media">
@@ -3596,7 +3821,7 @@ main section[id] {
         <div class="contact-info">
           <p class="eyebrow" data-reveal>Hablemos</p>
           <h2 class="section-title" data-reveal>Consigue el equipo <span class="text-gold">que necesitas</span></h2>
-          <p class="section-desc" data-reveal>Si tienes dudas sobre que pistola o tanque se adapta mejor a tu trabajo, escribenos. Te orientamos sin rodeos para que compres lo correcto desde el inicio.</p>
+          <p class="section-desc" data-reveal>¿Tienes duda o necesitas asesoramiento para elegir el equipo correcto para realizar tu trabajo? Contáctanos. Te orientamos sin rodeos para que compres lo correcto desde el inicio.</p>
           <ul class="contact-list" data-reveal-group>
             
             <li data-reveal>
@@ -4193,7 +4418,7 @@ window.addEventListener("load", () => window.setTimeout(onScroll, 140));
    TYPEWRITER
    ========================================================= */
 const typewriter = document.getElementById("typewriter");
-const words = ["Pintores", "Talleres automotrices", "Contratistas", "Uso personal"].filter((word) => word && word.trim());
+const words = ["Industria y producción", "Talleres automotrices", "Construcción y obra", "Uso profesional"].filter((word) => word && word.trim());
 
 if (typewriter && words.length) {
   if (prefersReduced) {
