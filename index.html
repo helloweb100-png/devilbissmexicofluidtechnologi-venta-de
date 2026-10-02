@@ -975,14 +975,41 @@ body.is-ready .hero-eyebrow::after {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: url("img/1.png") center center / cover no-repeat;
-  background-attachment: fixed;
+  background:
+    radial-gradient(ellipse 52% 60% at 82% 62%, color-mix(in srgb, var(--accent-orange) 14%, transparent), transparent 70%),
+    radial-gradient(ellipse 50% 55% at 14% 30%, color-mix(in srgb, var(--red) 16%, transparent), transparent 70%);
   opacity: 0;
   transition: opacity 1.8s ease;
 }
 
 body.is-ready .hero-bg {
   opacity: 1;
+}
+
+/* Mascota vectorial completa, nitida a cualquier tamano */
+.hero-mascot {
+  position: absolute;
+  right: clamp(24px, 5vw, 90px);
+  bottom: clamp(70px, 10vh, 120px);
+  z-index: 3;
+  width: auto;
+  height: clamp(240px, 38vh, 400px);
+  filter: drop-shadow(0 24px 50px rgba(0, 0, 0, 0.55));
+  opacity: 0;
+  transform: translate3d(0, 24px, 0);
+  pointer-events: none;
+  transition: opacity 1.2s ease 0.5s, transform 1.2s var(--ease-out) 0.5s;
+}
+
+body.is-ready .hero-mascot {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 1180px) {
+  .hero-mascot {
+    display: none;
+  }
 }
 
 .hero-veil {
@@ -1301,6 +1328,18 @@ main section[id] {
   background: rgba(5, 5, 6, 0.9);
 }
 
+/* Marca de agua vectorial: nitida a cualquier tamano y siempre completa */
+.section-bg--mark {
+  background-image: url("img/logo-devilbiss.svg");
+  background-size: min(86%, 1180px) auto;
+  background-position: center 36%;
+  background-attachment: scroll;
+}
+
+.why-us .section-bg-veil {
+  background: rgba(13, 14, 15, 0.84);
+}
+
 .has-bg::before {
   z-index: 2;
 }
@@ -1457,34 +1496,24 @@ main section[id] {
   order: 2;
 }
 
+/* Foto de producto completa (object-fit: contain) sobre fondo blanco: nunca se recorta */
 .service-media {
   position: relative;
   width: 100%;
   height: clamp(360px, 52vh, 540px);
   overflow: hidden;
   border: 1px solid var(--line-2);
-  background: var(--panel);
+  border-radius: var(--radius);
+  background: #ffffff;
 }
 
 .service-media > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: contrast(1.02) brightness(1.04);
-}
-
-.service-media::after {
-  content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
-  background: linear-gradient(180deg, transparent 62%, rgba(5, 5, 6, 0.4));
-  opacity: 0.55;
-  transition: opacity 0.6s ease;
-}
-
-.service-media:hover::after {
-  opacity: 0.15;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: clamp(14px, 2.2vw, 30px);
 }
 
 .service-body-head {
@@ -1787,6 +1816,110 @@ main section[id] {
 }
 
 /* =========================================================
+   IMAGENES SIN RECORTE: foto completa sobre fondo blanco, logos en vector
+   ========================================================= */
+.photo-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: clamp(18px, 2.6vw, 34px);
+  overflow: hidden;
+  border: 1px solid var(--line-2);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: var(--surface-shadow);
+}
+
+.photo-stage > img {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+}
+
+.banner-split {
+  min-height: 0;
+  padding: clamp(72px, 9vw, 128px) 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 88% 50%, color-mix(in srgb, var(--red) 15%, transparent), transparent 70%),
+    var(--ink-2);
+}
+
+.banner-split-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: clamp(32px, 5vw, 84px);
+  align-items: center;
+}
+
+.banner-split .parallax-content h2,
+.banner-split h2 {
+  font-size: clamp(2.2rem, 4.8vw, 4.1rem);
+}
+
+.banner-stage {
+  justify-self: end;
+  width: 100%;
+  max-width: 560px;
+}
+
+.banner-split--alt {
+  background:
+    radial-gradient(ellipse 50% 75% at 14% 50%, color-mix(in srgb, var(--accent-orange) 18%, transparent), transparent 70%),
+    var(--ink);
+}
+
+.banner-split--alt .banner-split-grid {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.banner-art {
+  margin: 0;
+  justify-self: center;
+}
+
+.banner-art > img {
+  width: auto;
+  height: clamp(260px, 36vw, 480px);
+  max-width: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.45));
+}
+
+.contact-grid > .contact-info {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.contact-grid > .contact-visual {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+}
+
+@media (max-width: 980px) {
+  .banner-split-grid,
+  .banner-split--alt .banner-split-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .banner-stage {
+    justify-self: center;
+    max-width: 520px;
+  }
+
+  .contact-grid > .contact-visual {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: center;
+    width: 100%;
+    max-width: 520px;
+  }
+}
+
+/* =========================================================
    WHY US - BORDERED GRID
    ========================================================= */
 /* ---------- Linea de tiempo (frases cortas + iconos numerados) ---------- */
@@ -1921,16 +2054,21 @@ main section[id] {
 
 .brochure-item {
   position: relative;
+  display: grid;
+  place-items: center;
   margin: 0;
+  padding: clamp(14px, 2vw, 26px);
   overflow: hidden;
   border: 1px solid var(--line-2);
-  background: var(--panel);
+  border-radius: var(--radius);
+  background: #ffffff;
 }
 
 .brochure-item > img {
   width: 100%;
   height: auto;
-  filter: contrast(1.02) brightness(1.03);
+  max-height: 460px;
+  object-fit: contain;
 }
 
 .brochure-item::after {
@@ -1966,7 +2104,8 @@ main section[id] {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border: 1px solid var(--photo-line-2);
-  background: var(--photo-panel);
+  border-radius: var(--radius);
+  background: #ffffff;
   --paper: var(--photo-paper);
   counter-increment: gitem;
 }
@@ -1974,8 +2113,8 @@ main section[id] {
 .gallery-item > img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  filter: contrast(1.02) brightness(1.03);
+  padding: clamp(14px, 4%, 26px);
+  object-fit: contain;
 }
 
 .gallery-tag {
@@ -2066,8 +2205,7 @@ main section[id] {
 }
 
 .js [data-reveal="media"].gallery-item.is-visible:hover > img {
-  transform: scale(1.06);
-  filter: contrast(1.04) brightness(1.06);
+  transform: scale(1.02);
 }
 
 .gallery-cta {
@@ -2927,10 +3065,6 @@ main section[id] {
     padding: 118px 0 78px;
   }
 
-  .hero-bg {
-    background-position: 62% center;
-  }
-
   .hero-veil {
     background:
       linear-gradient(180deg, rgba(5, 5, 6, 0.92) 0%, rgba(5, 5, 6, 0.78) 40%, rgba(5, 5, 6, 0.9) 78%, var(--ink) 100%),
@@ -3388,7 +3522,7 @@ main section[id] {
     <div class="loader-texture" aria-hidden="true"></div>
     <div class="loader-inner">
       <div class="loader-mark">
-        <img src="img/logo-mascota.png" alt="" class="loader-logo">
+        <img src="img/logo-mascota.svg" alt="" class="loader-logo">
       </div>
       <div class="loader-rings" aria-hidden="true">
         <span></span><span></span><span></span>
@@ -3404,9 +3538,9 @@ main section[id] {
 <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="#inicio" class="brand" aria-label="DeVilbiss Mexico Fluid Technologies - Pistolas, tanques y conexiones para pintar">
-        <span class="brand-mark"><img src="img/logo-mascota.png" alt="" class="brand-logo"></span>
+        <span class="brand-mark"><img src="img/logo-mascota.svg" alt="" class="brand-logo"></span>
         <span class="brand-text">
-          <img src="img/logo-devilbiss.png" alt="DeVilbiss" class="brand-wordmark">
+          <img src="img/logo-devilbiss.svg" alt="DeVilbiss" class="brand-wordmark">
           <span class="brand-tagline">Mexico Fluid Technologies</span>
         </span>
       </a>
@@ -3432,6 +3566,7 @@ main section[id] {
 <section class="hero" id="inicio">
       <div class="hero-bg" aria-hidden="true"></div>
       <div class="hero-veil" aria-hidden="true"></div>
+      <img class="hero-mascot" src="img/logo-mascota.svg" alt="" aria-hidden="true" width="580" height="600">
       <canvas id="particles-canvas" aria-hidden="true"></canvas>
       <div class="hero-rules" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
       <div class="container hero-inner">
@@ -3503,7 +3638,7 @@ main section[id] {
             </div>
           </article>
           <article class="equip-card equip-card--photo" style="--card-color:var(--red)" data-reveal>
-            <div class="equip-card-media"><img src="img/11.jpg" alt="Pistola DeVilbiss DV1" loading="lazy" width="541" height="537"></div>
+            <div class="equip-card-media"><img src="img/11.webp" alt="Pistola DeVilbiss DV1" loading="lazy" width="541" height="537"></div>
             <div class="equip-card-body">
               <span class="equip-card-code">DV1</span>
               <span class="equip-card-cat">Pistola de gravedad</span>
@@ -3516,7 +3651,7 @@ main section[id] {
             </div>
           </article>
           <article class="equip-card equip-card--photo" style="--card-color:var(--accent-teal)" data-reveal>
-            <div class="equip-card-media"><img src="img/15.png" alt="Pistola industrial DeVilbiss JGA" loading="lazy" width="213" height="276"></div>
+            <div class="equip-card-media"><img src="img/15.webp" alt="Pistola industrial DeVilbiss JGA" loading="lazy" width="213" height="276"></div>
             <div class="equip-card-body">
               <span class="equip-card-code">JGA</span>
               <span class="equip-card-cat">Pistola industrial</span>
@@ -3535,14 +3670,14 @@ main section[id] {
             </div>
           </article>
           <article class="equip-card equip-card--photo" style="--card-color:var(--sage)" data-reveal>
-            <div class="equip-card-media"><img src="img/4.jpg" alt="Tanque de presión Binks" loading="lazy" width="343" height="493"></div>
+            <div class="equip-card-media"><img src="img/4.webp" alt="Tanque de presión Binks" loading="lazy" width="343" height="493"></div>
             <div class="equip-card-body">
               <span class="equip-card-code">Tanques</span>
               <span class="equip-card-cat">Tanque de presión</span>
             </div>
           </article>
           <article class="equip-card equip-card--photo" style="--card-color:var(--accent-navy)" data-reveal>
-            <div class="equip-card-media"><img src="img/3.png" alt="Bomba de circulación Binks" loading="lazy" width="521" height="304"></div>
+            <div class="equip-card-media"><img src="img/3.webp" alt="Bomba de circulación Binks" loading="lazy" width="521" height="304"></div>
             <div class="equip-card-body">
               <span class="equip-card-code">Bombas</span>
               <span class="equip-card-cat">Bomba</span>
@@ -3559,7 +3694,7 @@ main section[id] {
         <div class="service-rows">
           <article class="service-row">
             <div class="service-media" data-reveal="media">
-              <img src="img/2.png" alt="Pistola de pintura Binks de succión para trabajo profesional" loading="lazy">
+              <img src="img/2.webp" alt="Pistola de pintura Binks de succión para trabajo profesional" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
@@ -3580,7 +3715,7 @@ main section[id] {
 
           <article class="service-row service-row--reverse">
             <div class="service-media" data-reveal="media">
-              <img src="img/4.jpg" alt="Tanque de presión Binks con doble regulador y manómetros" loading="lazy">
+              <img src="img/4.webp" alt="Tanque de presión Binks con doble regulador y manómetros" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
@@ -3601,7 +3736,7 @@ main section[id] {
 
           <article class="service-row">
             <div class="service-media" data-reveal="media">
-              <img src="img/3.png" alt="Bomba de circulación de pintura Binks con filtros dobles" loading="lazy">
+              <img src="img/3.webp" alt="Bomba de circulación de pintura Binks con filtros dobles" loading="lazy">
             </div>
             <div class="service-body" data-reveal-group>
               <div class="service-body-head" data-reveal>
@@ -3649,16 +3784,19 @@ main section[id] {
         </div>
       </div>
     </section>
-<section class="parallax-banner" data-parallax>
-      <div class="parallax-bg" style="background-image:url('img/1.png');" aria-hidden="true"></div>
-      <div class="parallax-overlay" aria-hidden="true"></div>
-      <div class="container parallax-content">
-        <p class="eyebrow" data-reveal>Equipo que trabaja contigo</p>
-        <h2 data-reveal>Todo lo que necesitas para pintar con potencia y precision, en un solo lugar.</h2>
+<section class="parallax-banner banner-split" data-parallax>
+      <div class="container parallax-content banner-split-grid">
+        <div class="banner-copy">
+          <p class="eyebrow" data-reveal>Equipo que trabaja contigo</p>
+          <h2 data-reveal>Todo lo que necesitas para pintar con potencia y precision, en un solo lugar.</h2>
+        </div>
+        <figure class="photo-stage banner-stage" data-reveal="media">
+          <img src="img/1.webp" alt="Cabezal de pistola de pintura Binks de acero inoxidable" loading="lazy" width="513" height="283">
+        </figure>
       </div>
     </section>
 <section class="why-us has-bg">
-      <div class="section-bg" style="background-image:url('img/9.jpg');" aria-hidden="true"></div>
+      <div class="section-bg section-bg--mark" aria-hidden="true"></div>
       <div class="section-bg-veil" aria-hidden="true"></div>
       <div class="container">
         <div class="section-head section-head--center">
@@ -3735,17 +3873,20 @@ main section[id] {
           <p class="section-desc" data-reveal>Encuentra en nuestras marcas manguera, conexiones, equipo de filtración de aire para tu línea, refacciones y soporte para tus equipos. Sales con el equipo adecuado para tu tipo de trabajo, sin gastar de mas ni quedarte corto.</p>
         </div>
         <div class="brochures-grid" data-reveal-group>
-          <figure class="brochure-item" data-reveal="media"><img src="img/6.jpg" alt="Sistema de filtración de aire DeVilbiss CleanAir con doble filtro y regulador" loading="lazy"></figure>
-          <figure class="brochure-item" data-reveal="media"><img src="img/7.png" alt="Trabajamos con equipo original Binks y DeVilbiss" loading="lazy"></figure>
+          <figure class="brochure-item" data-reveal="media"><img src="img/6.webp" alt="Sistema de filtración de aire DeVilbiss CleanAir con doble filtro y regulador" loading="lazy"></figure>
+          <figure class="brochure-item" data-reveal="media"><img src="img/logo-marcas.svg" alt="Trabajamos con equipo original Binks y DeVilbiss Automotive Refinishing" loading="lazy" width="516" height="168"></figure>
         </div>
       </div>
     </section>
-<section class="parallax-banner parallax-banner--alt" data-parallax>
-      <div class="parallax-bg" style="background-image:url('img/8.png');" aria-hidden="true"></div>
-      <div class="parallax-overlay" aria-hidden="true"></div>
-      <div class="container parallax-content">
-        <p class="eyebrow" data-reveal>Asi trabajamos nosotros</p>
-        <h2 data-reveal>Conocemos cada equipo que vendemos y te ayudamos a elegir el correcto para tu trabajo.</h2>
+<section class="parallax-banner parallax-banner--alt banner-split banner-split--alt" data-parallax>
+      <div class="container parallax-content banner-split-grid">
+        <figure class="banner-art" data-reveal="media">
+          <img src="img/logo-mascota.svg" alt="Mascota DeVilbiss aplicando pintura con pistola" loading="lazy" width="580" height="600">
+        </figure>
+        <div class="banner-copy">
+          <p class="eyebrow" data-reveal>Asi trabajamos nosotros</p>
+          <h2 data-reveal>Conocemos cada equipo que vendemos y te ayudamos a elegir el correcto para tu trabajo.</h2>
+        </div>
       </div>
     </section>
 <section class="gallery" id="galeria">
@@ -3760,42 +3901,42 @@ main section[id] {
         <div class="gallery-grid" data-reveal-group>
           <figure class="gallery-item" data-reveal="media">
             <span class="gallery-tag" style="--gtag-color:var(--red)">Gravedad</span>
-            <img src="img/11.jpg" alt="Pistola de gravedad DeVilbiss DV1 con vaso superior" loading="lazy">
+            <img src="img/11.webp" alt="Pistola de gravedad DeVilbiss DV1 con vaso superior" loading="lazy">
             <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="0" aria-label="Ampliar imagen: Pistola de gravedad DeVilbiss DV1 con vaso superior">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
             <span class="gallery-tag" style="--gtag-color:var(--red)">Gravedad</span>
-            <img src="img/12.png" alt="Pistola de gravedad DeVilbiss DV1, acabado negro y dorado" loading="lazy">
+            <img src="img/12.webp" alt="Pistola de gravedad DeVilbiss DV1, acabado negro y dorado" loading="lazy">
             <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="1" aria-label="Ampliar imagen: Pistola de gravedad DeVilbiss DV1, acabado negro y dorado">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
             <span class="gallery-tag" style="--gtag-color:var(--red)">Gravedad</span>
-            <img src="img/13.png" alt="Pistola de gravedad DeVilbiss DV1, acabado negro y azul" loading="lazy">
+            <img src="img/13.webp" alt="Pistola de gravedad DeVilbiss DV1, acabado negro y azul" loading="lazy">
             <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="2" aria-label="Ampliar imagen: Pistola de gravedad DeVilbiss DV1, acabado negro y azul">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
             <span class="gallery-tag" style="--gtag-color:var(--gold)">Control</span>
-            <img src="img/14.png" alt="Sistema de control y dosificación Binks IntelliFlow RCS3" loading="lazy">
+            <img src="img/14.webp" alt="Sistema de control y dosificación Binks IntelliFlow RCS3" loading="lazy">
             <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="3" aria-label="Ampliar imagen: Sistema de control y dosificación Binks IntelliFlow RCS3">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
             <span class="gallery-tag" style="--gtag-color:var(--accent-orange)">Succión</span>
-            <img src="img/15.png" alt="Pistola de succión profesional DeVilbiss" loading="lazy">
+            <img src="img/15.webp" alt="Pistola de succión profesional DeVilbiss" loading="lazy">
             <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="4" aria-label="Ampliar imagen: Pistola de succión profesional DeVilbiss">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
           </figure>
           <figure class="gallery-item" data-reveal="media">
             <span class="gallery-tag" style="--gtag-color:var(--accent-teal)">Presión</span>
-            <img src="img/16.png" alt="Pistola de alimentación a presión DeVilbiss con manguera conductiva" loading="lazy">
+            <img src="img/16.webp" alt="Pistola de alimentación a presión DeVilbiss con manguera conductiva" loading="lazy">
             <button type="button" class="gallery-trigger" data-lightbox-open data-lightbox-index="5" aria-label="Ampliar imagen: Pistola de alimentación a presión DeVilbiss con manguera conductiva">
               <svg class="gallery-trigger-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" d="M4 9V5a1 1 0 0 1 1-1h4M15 4h4a1 1 0 0 1 1 1v4M20 15v4a1 1 0 0 1-1 1h-4M9 20H5a1 1 0 0 1-1-1v-4"/></svg>
             </button>
@@ -3815,9 +3956,10 @@ main section[id] {
       </div>
     </section>
 <section class="contact has-bg" id="contacto">
-      <div class="section-bg" style="background-image:url('img/10.png');" aria-hidden="true"></div>
-      <div class="section-bg-veil" aria-hidden="true"></div>
       <div class="container contact-grid">
+        <figure class="photo-stage contact-visual" data-reveal="media">
+          <img src="img/10.webp" alt="Pistola de gravedad DeVilbiss DV1 negra con detalles azules" loading="lazy" width="529" height="533">
+        </figure>
         <div class="contact-info">
           <p class="eyebrow" data-reveal>Hablemos</p>
           <h2 class="section-title" data-reveal>Consigue el equipo <span class="text-gold">que necesitas</span></h2>
@@ -3869,8 +4011,8 @@ main section[id] {
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="#inicio" class="brand" aria-label="DeVilbiss Mexico Fluid Technologies - Pistolas, tanques y conexiones para pintar">
-          <span class="brand-mark"><img src="img/logo-mascota.png" alt="" class="brand-logo"></span>
-          <span class="brand-text"><img src="img/logo-devilbiss.png" alt="DeVilbiss" class="brand-wordmark"><span class="brand-tagline">Mexico Fluid Technologies</span></span>
+          <span class="brand-mark"><img src="img/logo-mascota.svg" alt="" class="brand-logo"></span>
+          <span class="brand-text"><img src="img/logo-devilbiss.svg" alt="DeVilbiss" class="brand-wordmark"><span class="brand-tagline">Mexico Fluid Technologies</span></span>
         </a>
         <p>Venta de pistolas, tanques y conexiones para pintar. Equipo para profesionales que necesitan potencia y precision en cada trabajo.</p>
       </div>
