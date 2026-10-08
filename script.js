@@ -27,7 +27,7 @@
   "use strict";
 
   /* ------------------------------------------------------------------ 01 */
-  const WA_NUMBER = "527221913322";
+  const WA_NUMBER = "525641443594";
   const $ = (selector, scope = document) => scope.querySelector(selector);
   const $$ = (selector, scope = document) => [...scope.querySelectorAll(selector)];
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
